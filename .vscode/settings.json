@@ -1,0 +1,14 @@
+// Platzieren Sie Ihre Einstellungen in dieser Datei, um Standard- und Benutzereinstellungen zu überschreiben.
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+
+  // Controls if the editor should automatically format the line after typing
+  "beautify.onSave": true,
+  "beautify.JSfiles": [
+    "js",
+    "json",
+    "jsbeautifyrc",
+    "jshintrc",
+    "ts"
+  ]
+}
