@@ -9,6 +9,7 @@ import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found-component';
+import { ProductsModule } from './products/products.module';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { NotFoundComponent } from './not-found/not-found-component';
       useHash: true
     }),
     CoreModule,
-    SharedModule
+    SharedModule,
+    ProductsModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'en-US' }
