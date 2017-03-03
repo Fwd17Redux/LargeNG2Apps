@@ -4,11 +4,12 @@ import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { routes } from './products.routes';
 import { ProductsListComponent } from './products-list/products-list.component';
+import { ProductsActions } from './backend/products/products.actions';
 
 @NgModule({
   imports: [SharedModule, RouterModule.forChild(routes)],
   exports: [],
   declarations: [ProductsPageComponent, ProductsListComponent],
-  providers: [],
+  providers: [ProductsActions],
 })
 export class ProductsModule { }

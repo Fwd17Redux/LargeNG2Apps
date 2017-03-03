@@ -3,7 +3,7 @@ import { combineReducers } from 'redux-immutable';
 import { fromJS } from 'immutable';
 
 import { IAction, IReducer, IState } from './shared/interfaces';
-// import { productsReducer } from './products/backend/products/products.reducer';
+import { productsReducer } from './products/backend/products/products.reducer';
 // import { currentProductReducer } from './products/backend/products/current-product.reducer';
 // import { orderReducer } from './order/backend/order/order.reducer';
 
@@ -22,7 +22,7 @@ export const RootReducer: OpaqueToken = new OpaqueToken('RootReducer');
 export function rootReducer(): IReducer {
   return combineReducers({
     // greeting: greetingReducer,
-    // products: productsReducer,
+    products: productsReducer,
     // currentProduct: currentProductReducer,
     // order: orderReducer
   });
