@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NgRedux } from 'ng2-redux';
+import { NgRedux, select } from 'ng2-redux';
 import { IState } from '../../shared/interfaces';
 import { ProductsActions } from '../backend/products/products.actions';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   moduleId: module.id,
@@ -13,6 +14,8 @@ export class ProductsPageComponent implements OnInit {
     private store: NgRedux<IState>,
     private actions: ProductsActions
   ) { }
+
+  @select(['products','entities']) products$: Observable<any>;
 
   deleteProducts(product) { }
 

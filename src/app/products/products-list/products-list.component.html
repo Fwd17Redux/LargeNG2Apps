@@ -1,1 +1,11 @@
 <p>Hello from the products-list!</p>
+
+<table class="table table-striped table-bordered table-hover">
+  <tr *ngFor="let product of products; trackBy: identity">
+    <td>{{product.get('id')}}</td>
+    <td>{{product.get('articleId')}}</td>
+    <td>{{product.get('label')}}</td>
+    <td>{{product.get('price')}}</td>
+    <td><button>delete me</button></td>
+  </tr>
+</table>
