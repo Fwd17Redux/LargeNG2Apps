@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   moduleId: module.id,
@@ -6,10 +7,26 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
   templateUrl: './product-form.component.html'
 })
 export class ProductFormComponent implements OnInit {
-  constructor() { }
+
+  private form: FormGroup;
 
   @Input() product: Map<string, any>;
-  @Output() onSave: EventEmitter<any> = new EventEmitter();
+  @Output() onSubmit: EventEmitter<any> = new EventEmitter();
 
-  ngOnInit() { }
+  constructor(fb: FormBuilder) {
+    this.form = fb.group({
+      id: [''],
+      articleId: ['', Validators.required],
+      label: ['', Validators.required],
+      price: ['42', Validators.required],
+    });
+  }
+
+  reset(): void {
+    this.form.reset();
+  }
+
+  ngOnInit() {
+  }
+
 }

@@ -1,1 +1,20 @@
 <p>welcome to the product form</p>
+
+<form class="form-horizontal" [formGroup]="form">
+
+  <p>
+    <input type="hidden" formControlName="id">
+  </p>
+  <p> Article id:
+    <input type="text" formControlName="articleId">
+  </p>
+  <p> Name:
+    <input type="text" formControlName="label">
+  </p>
+  <p> Price:
+    <input type="text" formControlName="price">
+  </p>
+  <p>
+    <input type="submit" (click)="onSubmit.next(form.value)" value="Save">
+  </p>
+</form>
