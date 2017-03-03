@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found-component';
 import { ProductsModule } from './products/products.module';
 import { CalculatorModule } from './calculator/calculator.module';
+import { OrderModule } from './order/order.module';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { CalculatorModule } from './calculator/calculator.module';
     CoreModule,
     SharedModule,
     ProductsModule,
-    CalculatorModule
+    CalculatorModule,
+    OrderModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'en-US' }
