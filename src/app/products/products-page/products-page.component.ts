@@ -15,7 +15,8 @@ export class ProductsPageComponent implements OnInit {
     private actions: ProductsActions
   ) { }
 
-  @select(['products','entities']) products$: Observable<any>;
+  @select(['products', 'entities']) products$: Observable<any>;
+  @select(['products', 'loading']) loading$: Observable<any>;
 
   deleteProducts(product) { }
 

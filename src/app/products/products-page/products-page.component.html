@@ -1,3 +1,6 @@
 <p>Hello from the products page</p>
 
-<dcs-products-list [products]="products$ | async" (onDelete)="deleteProducts($event)"></dcs-products-list>
+<p *ngIf="loading$ | async"> ... is loading ....</p>
+
+
+<dcs-products-list *ngIf="!(loading$ | async)" [products]="products$ | async" (onDelete)="deleteProducts($event)"></dcs-products-list>
