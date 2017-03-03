@@ -3,4 +3,4 @@
 <p *ngIf="loading$ | async"> ... is loading ....</p>
 
 
-<dcs-products-list *ngIf="!(loading$ | async)" [products]="products$ | async" (onDelete)="deleteProducts($event)"></dcs-products-list>
+<dcs-products-list *ngIf="!(loading$ | async)" [products]="products$ | async" (onDelete)="deleteProduct($event)"></dcs-products-list>

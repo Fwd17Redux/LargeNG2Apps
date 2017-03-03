@@ -6,6 +6,6 @@
     <td>{{product.get('articleId')}}</td>
     <td>{{product.get('label')}}</td>
     <td>{{product.get('price')}}</td>
-    <td><button>delete me</button></td>
+    <td><button (click)="onDelete.emit(product)">delete me</button></td>
   </tr>
 </table>

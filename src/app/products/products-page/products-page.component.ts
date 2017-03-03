@@ -18,7 +18,11 @@ export class ProductsPageComponent implements OnInit {
   @select(['products', 'entities']) products$: Observable<any>;
   @select(['products', 'loading']) loading$: Observable<any>;
 
-  deleteProducts(product) { }
+  deleteProduct(product) {
+    console.log('deleting', product);
+    const action = this.actions.delete(product);
+    this.store.dispatch(action);
+  }
 
   ngOnInit() {
     this.store.dispatch(this.actions.fetch());
