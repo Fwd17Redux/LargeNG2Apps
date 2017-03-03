@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { PresentationalComponent } from '../../shared/component/presentational-component';
+import { Component, Input } from '@angular/core';
+
 
 @Component({
-  moduleId: module.id,
   selector: 'dcs-order-totals',
   templateUrl: './order-totals.component.html'
 })
-export class OrderTotalsComponent implements OnInit {
-  constructor() { }
+export class OrderTotalsComponent extends PresentationalComponent {
 
-  ngOnInit() { }
+  @Input() orderTotalsByUser: Map<string, number>;
+  @Input() orderTotal: number;
+
 }

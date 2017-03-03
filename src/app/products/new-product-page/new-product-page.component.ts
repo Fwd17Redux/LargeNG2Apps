@@ -1,28 +1,24 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ProductsActions } from '../backend/products/products.actions';
+import { Component, ViewChild } from '@angular/core';
 import { NgRedux } from 'ng2-redux';
-import { IState } from '../../shared/interfaces';
+import { IState, IAction } from '../../shared/interfaces';
+import { ProductsActions } from '../backend/products/products.actions';
 import { fromJS } from 'immutable';
 import { ProductFormComponent } from '../product-form/product-form.component';
 
+
 @Component({
-  moduleId: module.id,
-  selector: 'dcs-new-product-page',
+  selector: 'dcs-product-page',
   templateUrl: './new-product-page.component.html'
 })
-export class NewProductPageComponent implements OnInit {
-  constructor(
-    private store: NgRedux<IState>,
-    private actions: ProductsActions
-  ) { }
+export class NewProductPageComponent {
 
   @ViewChild('productForm') productForm: ProductFormComponent;
 
-  ngOnInit() { }
+  constructor(private store: NgRedux<IState>, private actions: ProductsActions) {
+  }
 
-  saveProduct(product: Map<string, any>) {
-    console.log('saving', product);
-    const action = this.actions.save(fromJS(product));
+  saveProduct(product: Map<string, any>): void {
+    const action: IAction = this.actions.save(fromJS(product));
     this.store.dispatch(action);
 
     action.payload.subscribe((data) => {
@@ -31,7 +27,3 @@ export class NewProductPageComponent implements OnInit {
   }
 
 }
-
-
-
-

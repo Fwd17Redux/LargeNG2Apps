@@ -1,1 +1,21 @@
-<p> Welcome to the order totals</p>
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Total Payment</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr *ngFor="let item of orderTotalsByUser">
+      <td>{{ item[0] }}</td>
+      <td>{{ item[1] | dcsPrice }}</td>
+    </tr>
+
+    <tr>
+      <th>TOTAL</th>
+      <th>{{ orderTotal | dcsPrice }}</th>
+    </tr>
+
+</table>

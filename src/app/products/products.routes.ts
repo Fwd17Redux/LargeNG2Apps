@@ -4,5 +4,5 @@ import { NewProductPageComponent } from './new-product-page/new-product-page.com
 
 export const routes: Array<Route> = [
   { path: 'products', component: ProductsPageComponent },
-  { path: 'products/new', component: NewProductPageComponent }
+  { path: 'products/new', component: NewProductPageComponent },
 ];

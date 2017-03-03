@@ -1,20 +1,31 @@
-<p>welcome to the product form</p>
-
 <form class="form-horizontal" [formGroup]="form">
 
-  <p>
-    <input type="hidden" formControlName="id">
-  </p>
-  <p> Article id:
-    <input type="text" formControlName="articleId">
-  </p>
-  <p> Name:
-    <input type="text" formControlName="label">
-  </p>
-  <p> Price:
-    <input type="text" formControlName="price">
-  </p>
-  <p>
-    <input type="submit" (click)="onSubmit.next(form.value)" value="Save">
-  </p>
+  <input type="hidden" class="form-control" formControlName="id">
+
+  <div class="form-group" [ngClass]="{ error: hasError(form, 'articleId') }">
+    <label for="inputArticleId" class="col-sm-2 control-label">Article ID</label>
+    <div class="col-sm-10">
+      <input type="string" class="form-control" id="inputArticleId" placeholder="Article ID" formControlName="articleId">
+    </div>
+  </div>
+
+  <div class="form-group" [ngClass]="{ error: hasError(form, 'label') }">
+    <label for="inputLabel" class="col-sm-2 control-label">Label</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputLabel" placeholder="Label" formControlName="label">
+    </div>
+  </div>
+
+  <div class="form-group" [ngClass]="{ error: hasError(form, 'price') }">
+    <label for="inputPrice" class="col-sm-2 control-label">Price</label>
+    <div class="col-sm-10">
+      <input type="number" min="0.1" step="0.05" class="form-control" id="inputPrice" placeholder="Price" formControlName="price">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default" (click)="onSubmit.next(form.value)" [disabled]="form.invalid">Submit</button>
+    </div>
+  </div>
 </form>

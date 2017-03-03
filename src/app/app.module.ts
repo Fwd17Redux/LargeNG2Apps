@@ -3,14 +3,13 @@ import { RouterModule } from '@angular/router';
 
 import { routes } from './app.routes';
 
+import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
+import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { NotFoundComponent } from './not-found/not-found-component';
 import { ProductsModule } from './products/products.module';
-import { CalculatorModule } from './calculator/calculator.module';
 import { OrderModule } from './order/order.module';
 
 
@@ -19,7 +18,7 @@ import { OrderModule } from './order/order.module';
     // components
     AppComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     RouterModule.forRoot(routes, {
@@ -28,11 +27,10 @@ import { OrderModule } from './order/order.module';
     CoreModule,
     SharedModule,
     ProductsModule,
-    CalculatorModule,
     OrderModule
   ],
   providers: [
-    { provide: LOCALE_ID, useValue: 'en-US' }
+    { provide: LOCALE_ID, useValue: 'de-DE' }
   ]
 })
 export class AppModule { }

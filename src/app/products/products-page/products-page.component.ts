@@ -5,26 +5,25 @@ import { ProductsActions } from '../backend/products/products.actions';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
-  moduleId: module.id,
   selector: 'dcs-product-page',
   templateUrl: './products-page.component.html'
 })
 export class ProductsPageComponent implements OnInit {
-  constructor(
-    private store: NgRedux<IState>,
-    private actions: ProductsActions
-  ) { }
 
   @select(['products', 'entities']) products$: Observable<any>;
   @select(['products', 'loading']) loading$: Observable<any>;
 
-  deleteProduct(product) {
-    console.log('deleting', product);
-    const action = this.actions.delete(product);
-    this.store.dispatch(action);
+  constructor(
+    private store: NgRedux<IState>,
+    private actions: ProductsActions) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.store.dispatch(this.actions.fetch());
   }
+
+  deleteProduct(product): void {
+    this.store.dispatch(this.actions.delete(product));
+  }
+
 }

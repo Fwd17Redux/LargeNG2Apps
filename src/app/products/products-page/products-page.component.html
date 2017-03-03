@@ -1,8 +1,9 @@
-<p>Hello from the products page</p>
+<p>Welcome to our products page!</p>
+
 
 <p *ngIf="loading$ | async"> ... is loading ....</p>
 
+<dcs-products-list *ngIf="!(loading$ | async)" [products]="products$ | async" (onDelete)="deleteProduct($event)">
+</dcs-products-list>
 
-<dcs-products-list *ngIf="!(loading$ | async)" [products]="products$ | async" (onDelete)="deleteProduct($event)"></dcs-products-list>
-
-<a routerLink="/products/new">Add new Product</a>
+<a routerLink="/products/new">Add new product</a>

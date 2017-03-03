@@ -1,32 +1,39 @@
-import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Map } from 'immutable';
+
+import { PresentationalComponent } from '../../shared/component/presentational-component';
+
 
 @Component({
-  moduleId: module.id,
   selector: 'dcs-product-form',
   templateUrl: './product-form.component.html'
 })
-export class ProductFormComponent implements OnInit {
-
-  private form: FormGroup;
+export class ProductFormComponent extends PresentationalComponent implements OnChanges {
 
   @Input() product: Map<string, any>;
   @Output() onSubmit: EventEmitter<any> = new EventEmitter();
 
+  private form: FormGroup;
+
   constructor(fb: FormBuilder) {
+    super();
+
     this.form = fb.group({
       id: [''],
       articleId: ['', Validators.required],
       label: ['', Validators.required],
-      price: ['42', Validators.required],
+      price: [5.95, Validators.required]
     });
+  }
+
+  ngOnChanges() {
+    if (this.product) {
+      this.form.setValue(this.product.toJS());
+    }
   }
 
   reset(): void {
     this.form.reset();
   }
-
-  ngOnInit() {
-  }
-
 }

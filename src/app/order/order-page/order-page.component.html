@@ -1,1 +1,26 @@
-<p>Welcome to the order page</p>
+<div class="row">
+  <div class="col-sm-12">
+
+    <h1>Order</h1>
+
+    <dcs-order-form
+      [order]="order$ | async"
+      [orderLoaded]="orderLoaded$ | async"
+      [products]="products$ | async"
+      (onOrderChanged)="updateOrder($event)"
+    ></dcs-order-form>
+
+    <h2>Totals</h2>
+
+    <dcs-order-totals
+      [orderTotalsByUser]="orderTotalsByUser$ | async"
+      [orderTotal]="orderTotal$ | async"
+    >
+    </dcs-order-totals>
+
+
+  </div>
+</div>
+
+
+

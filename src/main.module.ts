@@ -66,7 +66,7 @@ export class MainModule {
     // recreate elements
     hmrStore.disposeOldHosts = createNewHosts(cmpLocation);
 
-    hmrStore.restoreInputValues = createInputTransfer();
+    hmrStore.restoreInputValues  = createInputTransfer();
     // remove styles - don't use this with global styles (webpack style-loader)!
     // removeNgStyles();
   }

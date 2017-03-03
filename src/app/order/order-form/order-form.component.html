@@ -1,1 +1,46 @@
-<p>Welcome to the order form</p>
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Product</th>
+      <th>Number of Products</th>
+      <th>Price for Single Item</th>
+      <th>Price for all Items</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr *ngFor="let productGroup of form.controls; let i = index" [formGroup]="productGroup">
+      <td>
+        <select class="form-control" formControlName="user">
+          <option></option>
+          <option [value]="user" *ngFor="let user of users">{{ user }}</option>
+        </select>
+      </td>
+
+      <td>
+        <select class="form-control" formControlName="productId">
+          <option></option>
+          <option [value]="product.get('id')" *ngFor="let product of products">{{ product.get('label') }}</option>
+        </select>
+      </td>
+
+      <td>
+        <input type="number" class="form-control" min="0" formControlName="numberOfProducts">
+      </td>
+
+      <td>{{ getPrice(productGroup.value.productId) | dcsPrice }}</td>
+      <td>{{ getTotalPrice(productGroup) | dcsPrice }}</td>
+
+      <td>
+        <button type="button" class="btn btn-danger" (click)="deleteItem(i)">Delete Item</button>
+      </td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+<button type="button" class="btn btn-default" (click)="addItem()">Add Item</button>
