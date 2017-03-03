@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+
+    <div class="col-sm-12">
+      <ul class="nav navbar-nav">
+
+        <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          TODO
+        </li>
+
+        <li role="presentation" routerLinkActive="active">
+          TODO
+        </li>
+
+        <li role="presentation" routerLinkActive="active">
+          TODO
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<div class="container content">
+          TODO
+</div>
