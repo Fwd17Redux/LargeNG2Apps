@@ -5,15 +5,15 @@
       <ul class="nav navbar-nav">
 
         <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-          <a routerLink="/">Home</a>
+          TODO
         </li>
 
         <li role="presentation" routerLinkActive="active">
-          <a routerLink="/order">Order</a>
+          TODO
         </li>
 
         <li role="presentation" routerLinkActive="active">
-          <a routerLink="/products">Manage Products</a>
+          TODO
         </li>
 
       </ul>
@@ -23,5 +23,5 @@
 </nav>
 
 <div class="container content">
-  <router-outlet></router-outlet>
+          TODO
 </div>
