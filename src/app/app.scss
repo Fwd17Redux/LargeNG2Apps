@@ -1,0 +1,19 @@
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+
+// define bootstrap overrides here
+$gray-base: #333;
+
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+
+// write or import app css
+h1 {
+  color: #111;
+}
+
+.error {
+  color: #a94442;
+}
+
+.content {
+  margin-top: 50px;
+}

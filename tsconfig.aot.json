@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "declaration": false,
+    "removeComments": true,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "pretty": true,
+    "noEmitHelpers": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": "./src",
+    "outDir": "./build/ngc/src",
+    "lib": ["dom", "es5"]
+  },
+  "exclude": [
+    "node_modules",
+    "build"
+  ],
+  "files": [
+    "src/rxjs_imports.ts",
+    "src/custom-typings.d.ts",
+    "src/main.ts"
+
+  ],
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "angularCompilerOptions": {
+    "debug": true
+  }
+}
