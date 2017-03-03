@@ -71,7 +71,7 @@ export class RestService {
 
     return this.http
       .request(url, requestOptions)
-      // .delay(300)
+      //   .delay(300)
       .map(extractResponseData)
       .share();
   }

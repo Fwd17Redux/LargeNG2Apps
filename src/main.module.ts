@@ -3,7 +3,7 @@ import { createNewHosts, createInputTransfer } from '@angularclass/hmr';
 import { NgReduxModule, NgRedux, DevToolsExtension } from 'ng2-redux';
 import { fromJS, Map } from 'immutable';
 
-// import { AppComponent } from './app/app.component';
+import { AppComponent } from './app/app.component';
 import { SharedModule } from './app/shared/shared.module';
 import { AppModule } from './app/app.module';
 import { IReducer, IState } from './app/shared/interfaces';
@@ -14,7 +14,7 @@ console.time('bootstrap');
 
 @NgModule({
   bootstrap: [
-    // AppComponent
+    AppComponent
   ],
   declarations: [
   ],
